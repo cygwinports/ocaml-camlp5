@@ -1,0 +1,7 @@
+category: OCaml
+requires: ocaml
+sdesc: "OCaml preprocessor and pretty-printer, version 5"
+ldesc: "Camlp5 is a preprocessor and pretty-printer for OCaml programs. 
+It also provides parsing and printing tools.
+
+This should not be confused with camlp4, which comes with the OCaml core."

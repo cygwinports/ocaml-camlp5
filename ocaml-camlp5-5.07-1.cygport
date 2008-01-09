@@ -1,0 +1,26 @@
+ORIG_PN="camlp5"
+inherit ocaml
+
+DESCRIPTION="OCaml preprocessor and pretty-printer"
+HOMEPAGE="http://pauillac.inria.fr/~ddr/camlp5/"
+SRC_URI="http://pauillac.inria.fr/~ddr/camlp5/distrib/src/${ORIG_PN}-${PV}.tgz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure \
+		-prefix /usr \
+		-bindir /usr/bin \
+		-libdir ${OCAML_LIBDIR} \
+		-mandir /usr/share/man \
+		|| error "configure failed"
+	cygmake -j1 world.opt
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	insinto ${OCAML_LIBDIR}/${ORIG_PN}
+	doins etc/META
+}
