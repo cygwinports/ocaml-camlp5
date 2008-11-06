@@ -6,13 +6,13 @@ provides parsing and printing tools.
 This should not be confused with camlp4, which comes with the OCaml core.
 
 Runtime requirements:
-  ocaml-3.10.0-1
+  ocaml-3.10.2-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.25-7
-  binutils-20060817-1
-  cygport-0.3.8-1
+  cygwin-1.5.25-15
+  binutils-20080624-2
+  cygport-0.4.2-1
   gcc-core-3.4.4-3
   make-3.81-1
 
@@ -25,15 +25,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack ocaml-camlp5-5.07-X-src.tar.bz2
+  unpack ocaml-camlp5-5.10-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./ocaml-camlp5-5.07-X.cygport all
+  cygport ./ocaml-camlp5-5.10-X.cygport all
 
 This will create:
-  /usr/src/ocaml-camlp5-5.07-X-src.tar.bz2
-  /usr/src/ocaml-camlp5-5.07-X.tar.bz2
+  /usr/src/ocaml-camlp5-5.10-X-src.tar.bz2
+  /usr/src/ocaml-camlp5-5.10-X.tar.bz2
 
 -------------------------------------------
 
@@ -128,6 +128,7 @@ Files included in the binary package:
   /usr/lib/ocaml/3.10/camlp5/pa_o.cmx
   /usr/lib/ocaml/3.10/camlp5/pa_o.o
   /usr/lib/ocaml/3.10/camlp5/pa_o_fast.cmx
+  /usr/lib/ocaml/3.10/camlp5/pa_o_fast.o
   /usr/lib/ocaml/3.10/camlp5/pa_oop.cmo
   /usr/lib/ocaml/3.10/camlp5/pa_oop.cmx
   /usr/lib/ocaml/3.10/camlp5/pa_oop.o
@@ -178,6 +179,9 @@ Files included in the binary package:
   /usr/lib/ocaml/3.10/camlp5/pr_extfun.cmo
   /usr/lib/ocaml/3.10/camlp5/pr_extfun.cmx
   /usr/lib/ocaml/3.10/camlp5/pr_extfun.o
+  /usr/lib/ocaml/3.10/camlp5/pr_extprint.cmo
+  /usr/lib/ocaml/3.10/camlp5/pr_extprint.cmx
+  /usr/lib/ocaml/3.10/camlp5/pr_extprint.o
   /usr/lib/ocaml/3.10/camlp5/pr_null.cmo
   /usr/lib/ocaml/3.10/camlp5/pr_null.cmx
   /usr/lib/ocaml/3.10/camlp5/pr_null.o
@@ -224,22 +228,26 @@ Files included in the binary package:
   /usr/lib/ocaml/3.10/camlp5/token.cmi
   /usr/lib/ocaml/3.10/camlp5/token.cmx
   /usr/lib/ocaml/3.10/camlp5/token.mli
-  /usr/share/doc/ocaml-camlp5-5.07/Changes
-  /usr/share/doc/ocaml-camlp5-5.07/INSTALL
-  /usr/share/doc/ocaml-camlp5-5.07/LICENSE
-  /usr/share/doc/ocaml-camlp5-5.07/README
+  /usr/share/doc/ocaml-camlp5-5.10/Changes
+  /usr/share/doc/ocaml-camlp5-5.10/INSTALL
+  /usr/share/doc/ocaml-camlp5-5.10/LICENSE
+  /usr/share/doc/ocaml-camlp5-5.10/README
   /usr/share/man/man1/camlp5.1.gz
-  /usr/share/man/man1/camlp5o.1
-  /usr/share/man/man1/camlp5o.opt.1
-  /usr/share/man/man1/camlp5r.1
-  /usr/share/man/man1/camlp5r.opt.1
-  /usr/share/man/man1/mkcamlp5.1
-  /usr/share/man/man1/mkcamlp5.opt.1
-  /usr/share/man/man1/ocpp5.1
+  /usr/share/man/man1/camlp5o.1.gz
+  /usr/share/man/man1/camlp5o.opt.1.gz
+  /usr/share/man/man1/camlp5r.1.gz
+  /usr/share/man/man1/camlp5r.opt.1.gz
+  /usr/share/man/man1/camlp5sch.1.gz
+  /usr/share/man/man1/mkcamlp5.1.gz
+  /usr/share/man/man1/mkcamlp5.opt.1.gz
+  /usr/share/man/man1/ocpp5.1.gz
 
 ------------------
 
 Port Notes:
+
+----- version 5.10-1 -----
+Version bump.
 
 ----- version 5.07-1 -----
 Initial release for Cygwin.
