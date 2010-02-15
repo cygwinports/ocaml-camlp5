@@ -4,6 +4,15 @@ inherit ocaml
 DESCRIPTION="OCaml preprocessor and pretty-printer"
 HOMEPAGE="http://pauillac.inria.fr/~ddr/camlp5/"
 SRC_URI="http://pauillac.inria.fr/~ddr/camlp5/distrib/src/${ORIG_PN}-${PV}.tgz"
+PATCH_URI="http://patch-tracker.debian.org/patch/series/dl/camlp5/5.12-3/0001-Add-partial-OCaml-3.11.2-support.patch"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_unpack_hook() {
+	cp -a ocaml_stuff/3.11.1 ocaml_stuff/3.11.2
+	sed -i -e 's/let ocaml_version = "3.11.1"/let ocaml_version = "3.11.2"/' \
+	    ocaml_stuff/3.11.2/utils/pconfig.ml
+	cp -a ocaml_src/main/ast2pt.ml_3.11.1 ocaml_src/main/ast2pt.ml_3.11.2
+}
 
 src_compile() {
 	lndirs
