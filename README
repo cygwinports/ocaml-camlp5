@@ -6,15 +6,15 @@ provides parsing and printing tools.
 This should not be confused with camlp4, which comes with the OCaml core.
 
 Runtime requirements:
-  ocaml-3.11.2-1
+  ocaml-base-3.12.0-4
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.7.1-1
-  binutils-2.19.51-1
-  cygport-0.9.80-1
-  flexdll-0.20-1
-  gcc4-core-4.3.4-3
+  cygwin-1.7.7-1
+  binutils-2.20.51-2
+  cygport-0.10.0-1
+  flexdll-0.25-1
+  gcc4-core-4.5.0-1
   make-3.81-2
 
 Canonical website:
@@ -26,19 +26,22 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack ocaml-camlp5-5.12-X-src.tar.bz2
+  unpack ocaml-camlp5-5.15-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./ocaml-camlp5-5.12-X.cygport all
+  cygport ./ocaml-camlp5-5.15-X.cygport all
 
 This will create:
-  /usr/src/ocaml-camlp5-5.12-X-src.tar.bz2
-  /usr/src/ocaml-camlp5-5.12-X.tar.bz2
+  /usr/src/ocaml-camlp5-5.15-X-src.tar.bz2
+  /usr/src/ocaml-camlp5-5.15-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 5.15-1 -----
+Version bump, built for OCaml 3.12.0.
 
 ----- version 5.12-1 -----
 Initial release for Cygwin 1.7.
