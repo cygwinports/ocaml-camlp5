@@ -4,6 +4,7 @@ inherit ocaml
 DESCRIPTION="OCaml preprocessor and pretty-printer"
 HOMEPAGE="http://pauillac.inria.fr/~ddr/camlp5/"
 SRC_URI="http://pauillac.inria.fr/~ddr/camlp5/distrib/src/${ORIG_PN}-${PV}.tgz"
+PATCH_URI="http://cristal.inria.fr/~ddr/camlp5/distrib/src/patch-6.02.3-1"
 
 src_compile() {
 	lndirs
