@@ -1,0 +1,34 @@
+inherit ocaml
+
+NAME="ocaml-camlp5"
+VERSION=6.02.3
+RELEASE=1
+CATEGORY="OCaml"
+SUMMARY="OCaml preprocessor and pretty-printer, version 5"
+DESCRIPTION="Camlp5 is a preprocessor and pretty-printer for OCaml programs.
+It also provides parsing and printing tools. This should not be confused with
+camlp4, which comes with the OCaml core."
+HOMEPAGE="http://pauillac.inria.fr/~ddr/camlp5/"
+SRC_URI="http://pauillac.inria.fr/~ddr/camlp5/distrib/src/camlp5-${VERSION}.tgz"
+SRC_DIR="camlp5-${VERSION}"
+PATCH_URI="http://cristal.inria.fr/~ddr/camlp5/distrib/src/patch-6.02.3-1"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure \
+		-prefix /usr \
+		-bindir /usr/bin \
+		-libdir ${OCAML_LIBDIR} \
+		-mandir /usr/share/man \
+		|| error "configure failed"
+	cygmake -j1 world.opt
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	insinto ${OCAML_LIBDIR}/camlp5
+	doins etc/META
+}
