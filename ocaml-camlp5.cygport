@@ -3,7 +3,7 @@ inherit ocaml
 NAME="ocaml-camlp5"
 VERSION=6.11
 RELEASE=1
-CATEGORY="OCaml"
+CATEGORY="Devel"
 SUMMARY="OCaml preprocessor and pretty-printer, version 5"
 DESCRIPTION="Camlp5 is a preprocessor and pretty-printer for OCaml programs.
 It also provides parsing and printing tools. This should not be confused with
