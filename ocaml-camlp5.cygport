@@ -1,7 +1,7 @@
 inherit ocaml
 
 NAME="ocaml-camlp5"
-VERSION=6.11
+VERSION=6.15
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="OCaml preprocessor and pretty-printer, version 5"
@@ -9,8 +9,8 @@ DESCRIPTION="Camlp5 is a preprocessor and pretty-printer for OCaml programs.
 It also provides parsing and printing tools. This should not be confused with
 camlp4, which comes with the OCaml core."
 REQUIRES="ocaml-base"
-HOMEPAGE="http://pauillac.inria.fr/~ddr/camlp5/"
-SRC_URI="http://pauillac.inria.fr/~ddr/camlp5/distrib/src/camlp5-${VERSION}.tgz"
+HOMEPAGE="http://camlp5.gforge.inria.fr/"
+SRC_URI="http://camlp5.gforge.inria.fr/distrib/src/camlp5-${VERSION}.tgz"
 SRC_DIR="camlp5-${VERSION}"
 
 src_compile() {
