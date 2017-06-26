@@ -2,7 +2,7 @@ inherit ocaml
 
 NAME="ocaml-camlp5"
 VERSION=6.17
-RELEASE=1
+RELEASE=2
 CATEGORY="Devel"
 SUMMARY="OCaml preprocessor and pretty-printer, version 5"
 DESCRIPTION="Camlp5 is a preprocessor and pretty-printer for OCaml programs.
@@ -13,6 +13,15 @@ SRC_URI="https://github.com/camlp5/camlp5/archive/rel${VERSION//.}/camlp5-rel${V
 SRC_DIR="camlp5-rel${VERSION//.}"
 
 REQUIRES="ocaml"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_unpack_hook() {
+	local ov=4.04.1
+	local nv=$(ocamlc -version)
+	cp -a ocaml_src/lib/versdep/$ov.ml ocaml_src/lib/versdep/$nv.ml
+	cp -a ocaml_stuff/$ov ocaml_stuff/$nv
+	sed -i -e "s/$ov/$nv/g" ocaml_stuff/$nv/*/*
+}
 
 src_compile() {
 	lndirs
